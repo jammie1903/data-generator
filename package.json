@@ -22,7 +22,7 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "name": "data-generator",
+  "name": "data-gen",
   "author": "Jammie1903",
   "module": "dist/mylib.esm.js",
   "devDependencies": {
