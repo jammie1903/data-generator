@@ -1,13 +1,13 @@
-import { 
-  ChanceGeneratorParameters, 
-  ChanceGeneratorReturnType, 
-  Factory, 
-  FactoryFn, 
-  FactoryInstance, 
+import {
+  ChanceGeneratorParameters,
+  ChanceGeneratorReturnType,
+  Factory,
+  FactoryFn,
+  FactoryInstance,
   FactoryInstanceFn,
-  GeneratorFn, 
-  GeneratorFnArg, 
-  GeneratorType, 
+  GeneratorFn,
+  GeneratorFnArg,
+  GeneratorType,
   TYPE,
 } from '../types'
 
