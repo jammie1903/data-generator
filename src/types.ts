@@ -15,7 +15,9 @@ export type ChanceGeneratorReturnType<T extends keyof Chance.Chance> = Chance.Ch
 export type ChanceGeneratorParameters<T extends keyof Chance.Chance> = Chance.Chance[T] extends (...args: infer P) => any ? P : never
 
 export type GenerationResult<T> = {
-  [k in keyof T]: T[k] extends FactoryInstance<any, infer R> ? R 
+  [k in keyof T]: 
+    T[k] extends Factory<any, any, infer R> ? R 
+  : T[k] extends FactoryInstance<any, infer R> ? R 
   : T[k] extends {} ? GenerationResult<T[k]>
   : T[k] extends [infer F] ? GenerationResult<F>
   : T[k]

@@ -1,10 +1,28 @@
-# TSDX Bootstrap
+# Data Generator
 
-This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
+This package is used to generate data based on a given schema.
 
-## Local Development
+data-generator is built on top of [chance.js](https://chancejs.com/), so any of the functions available there can be used ot help generate the data.
 
-Below is a list of commands you will probably find useful.
+## Usage
+
+### Basic Usage
+
+```js
+import { generate, chance } from '@jammie1903/data-generator'
+
+const schema = {
+  name: chance.name,
+  dob: chance.birthday({ type: 'adult' }),
+  gender: 'male',
+  address: {
+    address: chance.address,
+    country: chance.country({ full: true })
+  }
+}
+
+
+```
 
 ### `npm start` or `yarn start`
 

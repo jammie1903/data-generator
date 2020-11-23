@@ -7,7 +7,8 @@ interface ArrayParams {
   maxLength?: number
 }
 
-export default createFactory('custom', <T>(random: Random, schema: T, {minLength = 1, maxLength = 100}: ArrayParams) => {
+const array = createFactory('custom', <T>(random: Random, schema: T, params: ArrayParams = {}) => {
+  const {minLength = 1, maxLength = 100} = params
   const length = minLength + Math.floor(random() * (maxLength - minLength + 1))
   const array = []
 
@@ -17,3 +18,5 @@ export default createFactory('custom', <T>(random: Random, schema: T, {minLength
 
   return array
 })
+
+export default array
